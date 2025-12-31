@@ -44,4 +44,5 @@ require('lazy').setup {
   require 'plugins.refactoring',
   require 'plugins.rest',
   require 'plugins.autopairs',
+  require 'plugins.markdown',
 }
