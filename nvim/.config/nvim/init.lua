@@ -43,4 +43,5 @@ require('lazy').setup {
   require 'plugins.incline',
   require 'plugins.refactoring',
   require 'plugins.rest',
+  require 'plugins.autopairs',
 }
