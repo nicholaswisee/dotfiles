@@ -256,6 +256,36 @@ return {
         },
       },
 
+      -- Tailwind CSS
+      tailwindcss = {
+        filetypes = {
+          'html',
+          'css',
+          'scss',
+          'javascript',
+          'javascriptreact',
+          'typescript',
+          'typescriptreact',
+          'vue',
+          'svelte',
+          'astro',
+        },
+        settings = {
+          tailwindCSS = {
+            experimental = {
+              classRegex = {
+                'tw`([^`]*)',
+                'tw="([^"]*)',
+                'tw={"([^"}]*)',
+                'tw\\.\\w+`([^`]*)',
+                'clsx%(([^)]*)%)',
+                'classnames%(([^)]*)%)',
+              },
+            },
+          },
+        },
+      },
+
       -- Java
       jdtls = {},
 

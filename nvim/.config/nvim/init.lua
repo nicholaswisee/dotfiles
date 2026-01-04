@@ -45,4 +45,7 @@ require('lazy').setup {
   require 'plugins.rest',
   require 'plugins.autopairs',
   require 'plugins.markdown',
+  require 'plugins.hipatterns',
+  require 'plugins.autotag',
+  require 'plugins.presence',
 }
