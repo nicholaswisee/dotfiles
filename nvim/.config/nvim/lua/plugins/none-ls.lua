@@ -17,6 +17,7 @@ return {
         'prettier', -- ts/js formatter
         'eslint_d', -- ts/js linter
         'shfmt',
+        'goimports', -- go formatter (formats + organizes imports)
         -- 'stylua', -- lua formatter; Already installed via Mason
         -- 'ruff', -- Python linter and formatter; Already installed via Mason
       },
@@ -26,10 +27,23 @@ return {
 
     local sources = {
       diagnostics.checkmake,
-      formatting.prettier.with { filetypes = { 'html', 'json', 'yaml', 'markdown' } },
+      formatting.prettier.with {
+        filetypes = {
+          'javascript',
+          'javascriptreact',
+          'typescript',
+          'typescriptreact',
+          'json',
+          'yaml',
+          'markdown',
+          'html',
+        },
+      },
+
       formatting.stylua,
       formatting.shfmt.with { args = { '-i', '4' } },
       formatting.terraform_fmt,
+      formatting.goimports, -- Go formatter (formats + organizes imports)
       require('none-ls.formatting.ruff').with { extra_args = { '--extend-select', 'I' } },
       require 'none-ls.formatting.ruff_format',
     }
@@ -40,13 +54,23 @@ return {
       sources = sources,
       -- you can reuse a shared lspconfig on_attach callback here
       on_attach = function(client, bufnr)
+        if client.name ~= 'null-ls' then
+          return
+        end
+
         if client.supports_method 'textDocument/formatting' then
           vim.api.nvim_clear_autocmds { group = augroup, buffer = bufnr }
+
           vim.api.nvim_create_autocmd('BufWritePre', {
             group = augroup,
             buffer = bufnr,
             callback = function()
-              vim.lsp.buf.format { async = false }
+              vim.lsp.buf.format {
+                async = false,
+                filter = function(c)
+                  return c.name == 'null-ls'
+                end,
+              }
             end,
           })
         end

@@ -314,6 +314,9 @@ return {
 
       -- GitHub Actions / CI YAML
       gh_actions_ls = {},
+
+      -- Prisma
+      prismals = {},
     }
 
     -- Ensure the servers and tools above are installed

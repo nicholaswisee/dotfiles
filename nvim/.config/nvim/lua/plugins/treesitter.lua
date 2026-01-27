@@ -1,10 +1,17 @@
 return {
   -- Highlight, edit, and navigate code
   'nvim-treesitter/nvim-treesitter',
+  lazy = false,
   build = ':TSUpdate',
 
-  opts = {
-    ensure_installed = {
+  config = function()
+    -- Setup nvim-treesitter with new API
+    require('nvim-treesitter').setup {
+      install_dir = vim.fn.stdpath('data') .. '/site',
+    }
+
+    -- Define parsers to install
+    local parsers = {
       'lua',
       'python',
       'javascript',
@@ -31,18 +38,18 @@ return {
       'tsx',
       'css',
       'html',
-    },
+      'prisma',
+    }
 
-    auto_install = true,
+    -- Install parsers (async, no-op if already installed)
+    require('nvim-treesitter').install(parsers)
 
-    highlight = {
-      enable = true,
-      additional_vim_regex_highlighting = { 'ruby' },
-    },
-
-    indent = {
-      enable = true,
-      disable = { 'ruby' },
-    },
-  },
+    -- Enable treesitter highlighting for all buffers
+    vim.api.nvim_create_autocmd('FileType', {
+      pattern = '*',
+      callback = function()
+        pcall(vim.treesitter.start)
+      end,
+    })
+  end,
 }
