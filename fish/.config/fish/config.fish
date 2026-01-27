@@ -10,7 +10,12 @@ source /usr/share/cachyos-fish-config/cachyos-config.fish
 alias g='git'
 alias n='nvim'
 
+alias antigravity='antigravity 2>/dev/null'
+alias gt="ghosttime"
+
 fnm env --use-on-cd | source
+
+fzf --fish | source
 
 starship init fish | source
 zoxide init fish | source
