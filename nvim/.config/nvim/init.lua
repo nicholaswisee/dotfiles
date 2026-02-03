@@ -47,5 +47,6 @@ require('lazy').setup {
   require 'plugins.markdown',
   require 'plugins.hipatterns',
   require 'plugins.autotag',
+  require 'plugins.lazygit',
   require 'plugins.presence',
 }

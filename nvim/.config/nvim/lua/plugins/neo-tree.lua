@@ -27,7 +27,7 @@ return {
       end,
       keys = {
         { '<leader>w', ':Neotree toggle float<CR>', silent = true, desc = 'Float File Explorer' },
-        { '<leader>e', ':Neotree toggle position=left<CR>', silent = true, desc = 'Left File Explorer' },
+        { '<leader>e', ':Neotree toggle position=right<CR>', silent = true, desc = 'Right File Explorer' },
         { '<leader>ngs', ':Neotree float git_status<CR>', silent = true, desc = 'Neotree Open Git Status Window' },
       },
     },
@@ -126,7 +126,7 @@ return {
       -- see `:h neo-tree-custom-commands-global`
       commands = {},
       window = {
-        position = 'left',
+        position = 'right',
         width = 40,
         mapping_options = {
           noremap = true,
@@ -308,6 +308,6 @@ return {
       },
     }
 
-    vim.cmd [[nnoremap \ :Neotree reveal<cr>]]
+    vim.cmd [[nnoremap \ :Neotree reveal position=right<cr>]]
   end,
 }

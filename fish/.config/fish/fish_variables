@@ -2,7 +2,7 @@
 # VERSION: 3.0
 SETUVAR --export --path GOPATH:/home/nicholaswisee/go
 SETUVAR --export JAVA_HOME:/usr/lib/jvm/default
-SETUVAR --export --path PATH:/home/nicholaswisee/\x2ebun/bin\x1e/run/user/1000/fnm_multishells/400236_1769513155031/bin\x1e/run/user/1000/fnm_multishells/400231_1769513154938/bin\x1e/home/nicholaswisee/\x2elocal/share/fnm\x1e/home/nicholaswisee/go/bin\x1e/home/nicholaswisee/\x2elocal/share/nvim/mason/bin\x1e/home/nicholaswisee/\x2ecabal/bin\x1e/home/nicholaswisee/\x2eghcup/bin\x1e/home/nicholaswisee/\x2ebun/bin\x1e/run/user/1000/fnm_multishells/391042_1769512926626/bin\x1e/run/user/1000/fnm_multishells/391034_1769512926545/bin\x1e/home/nicholaswisee/\x2elocal/share/fnm\x1e/home/nicholaswisee/\x2ecabal/bin\x1e/home/nicholaswisee/\x2eghcup/bin\x1e/home/nicholaswisee/\x2ebun/bin\x1e/run/user/1000/fnm_multishells/391000_1769512926466/bin\x1e/run/user/1000/fnm_multishells/390963_1769512926408/bin\x1e/home/nicholaswisee/\x2elocal/share/fnm\x1e/home/nicholaswisee/\x2ebun/bin\x1e/run/user/1000/fnm_multishells/4712_1769494505086/bin\x1e/run/user/1000/fnm_multishells/4702_1769494505032/bin\x1e/home/nicholaswisee/\x2elocal/share/fnm\x1e/home/nicholaswisee/\x2elocal/share/pnpm\x1e/home/nicholaswisee/\x2ecabal/bin\x1e/home/nicholaswisee/\x2eghcup/bin\x1e/home/nicholaswisee/\x2ebun/bin\x1e/run/user/1000/fnm_multishells/1574_1769493480911/bin\x1e/home/nicholaswisee/\x2elocal/bin\x1e/run/user/1000/fnm_multishells/1569_1769493480830/bin\x1e/home/nicholaswisee/\x2elocal/share/fnm\x1e/usr/local/sbin\x1e/usr/local/bin\x1e/usr/bin\x1e/var/lib/flatpak/exports/bin\x1e/usr/lib/jvm/default/bin\x1e/usr/bin/site_perl\x1e/usr/bin/vendor_perl\x1e/usr/bin/core_perl\x1e/home/nicholaswisee/go/bin
+SETUVAR --export --path PATH:/home/nicholaswisee/\x2ebun/bin\x1e/run/user/1000/fnm_multishells/752368_1770124047246/bin\x1e/run/user/1000/fnm_multishells/752362_1770124047183/bin\x1e/home/nicholaswisee/\x2elocal/share/fnm\x1e/home/nicholaswisee/go/bin\x1e/home/nicholaswisee/\x2elocal/share/nvim/mason/bin\x1e/home/nicholaswisee/\x2ecabal/bin\x1e/home/nicholaswisee/\x2eghcup/bin\x1e/home/nicholaswisee/\x2ebun/bin\x1e/run/user/1000/fnm_multishells/704142_1770122751673/bin\x1e/run/user/1000/fnm_multishells/704134_1770122751582/bin\x1e/home/nicholaswisee/\x2elocal/share/fnm\x1e/home/nicholaswisee/\x2ecabal/bin\x1e/home/nicholaswisee/\x2eghcup/bin\x1e/home/nicholaswisee/\x2ebun/bin\x1e/run/user/1000/fnm_multishells/704100_1770122751503/bin\x1e/run/user/1000/fnm_multishells/704066_1770122751436/bin\x1e/home/nicholaswisee/\x2elocal/share/fnm\x1e/home/nicholaswisee/\x2ebun/bin\x1e/run/user/1000/fnm_multishells/3083_1770092683327/bin\x1e/run/user/1000/fnm_multishells/3072_1770092683282/bin\x1e/home/nicholaswisee/\x2elocal/share/fnm\x1e/home/nicholaswisee/\x2elocal/share/pnpm\x1e/home/nicholaswisee/\x2ecabal/bin\x1e/home/nicholaswisee/\x2eghcup/bin\x1e/home/nicholaswisee/\x2ebun/bin\x1e/run/user/1000/fnm_multishells/1585_1770092651359/bin\x1e/home/nicholaswisee/\x2elocal/bin\x1e/run/user/1000/fnm_multishells/1580_1770092651292/bin\x1e/home/nicholaswisee/\x2elocal/share/fnm\x1e/usr/local/sbin\x1e/usr/local/bin\x1e/usr/bin\x1e/var/lib/flatpak/exports/bin\x1e/usr/lib/jvm/default/bin\x1e/usr/bin/site_perl\x1e/usr/bin/vendor_perl\x1e/usr/bin/core_perl\x1e/home/nicholaswisee/go/bin
 SETUVAR --export XDG_CACHE_HOME:/home/nicholaswisee/\x2ecache
 SETUVAR --export XDG_CONFIG_HOME:/home/nicholaswisee/\x2econfig
 SETUVAR --export XDG_DATA_HOME:/home/nicholaswisee/\x2elocal/share
@@ -22,6 +22,7 @@ SETUVAR pure_color_command_duration:pure_color_warning
 SETUVAR pure_color_current_directory:pure_color_primary
 SETUVAR pure_color_danger:red
 SETUVAR pure_color_dark:black
+SETUVAR pure_color_exit_status:pure_color_danger
 SETUVAR pure_color_git_branch:pure_color_mute
 SETUVAR pure_color_git_dirty:pure_color_mute
 SETUVAR pure_color_git_stash:pure_color_info
@@ -48,6 +49,7 @@ SETUVAR pure_color_username_normal:pure_color_mute
 SETUVAR pure_color_username_root:pure_color_light
 SETUVAR pure_color_virtualenv:pure_color_mute
 SETUVAR pure_color_warning:yellow
+SETUVAR pure_convert_exit_status_to_signal:false
 SETUVAR pure_enable_aws_profile:true
 SETUVAR pure_enable_container_detection:true
 SETUVAR pure_enable_git:true
@@ -59,6 +61,7 @@ SETUVAR pure_reverse_prompt_symbol_in_vimode:true
 SETUVAR pure_separate_prompt_on_error:false
 SETUVAR pure_shorten_prompt_current_directory_length:0
 SETUVAR pure_shorten_window_title_current_directory_length:0
+SETUVAR pure_show_exit_status:false
 SETUVAR pure_show_jobs:false
 SETUVAR pure_show_numbered_git_indicator:false
 SETUVAR pure_show_prefix_root_prompt:false
@@ -66,6 +69,8 @@ SETUVAR pure_show_subsecond_command_duration:false
 SETUVAR pure_show_system_time:false
 SETUVAR pure_symbol_aws_profile_prefix:
 SETUVAR pure_symbol_container_prefix:
+SETUVAR pure_symbol_exit_status_prefix:\x7c
+SETUVAR pure_symbol_exit_status_separator:\x7c
 SETUVAR pure_symbol_git_dirty:\x2a
 SETUVAR pure_symbol_git_stash:\u2261
 SETUVAR pure_symbol_git_unpulled_commits:\u21e3
