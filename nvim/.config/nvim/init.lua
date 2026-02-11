@@ -49,4 +49,9 @@ require('lazy').setup {
   require 'plugins.autotag',
   require 'plugins.lazygit',
   require 'plugins.presence',
+  require 'plugins.obsidian',
+  require 'plugins.image',
+  require 'plugins.latex',
+  require 'plugins.java',
+  require 'plugins.dap-java',
 }

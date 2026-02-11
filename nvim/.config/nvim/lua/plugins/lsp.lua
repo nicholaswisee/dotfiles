@@ -286,8 +286,8 @@ return {
         },
       },
 
-      -- Java
-      jdtls = {},
+      -- Java - handled by nvim-jdtls plugin (see plugins/java.lua)
+      -- jdtls configuration removed - using dedicated nvim-jdtls plugin for better Java support
 
       -- HTML / CSS
       html = { filetypes = { 'html', 'twig', 'hbs' } },
@@ -317,6 +317,41 @@ return {
 
       -- Prisma
       prismals = {},
+
+      -- LaTeX
+      texlab = {
+        settings = {
+          texlab = {
+            build = {
+              executable = 'latexmk',
+              args = { '-pdf', '-interaction=nonstopmode', '-synctex=1', '%f' },
+              onSave = false,
+              forwardSearchAfter = false,
+            },
+            forwardSearch = {
+              executable = 'zathura',
+              args = { '--synctex-forward', '%l:1:%f', '%p' },
+            },
+            chktex = {
+              onOpenAndSave = false,
+              onEdit = false,
+            },
+            -- Reduce false positive diagnostics
+            diagnostics = {
+              ignoredPatterns = {
+                '^Overfull',
+                '^Underfull',
+              },
+            },
+            diagnosticsDelay = 300,
+            latexFormatter = 'latexindent',
+            latexindent = {
+              ['local'] = nil, -- path to latexindent config
+              modifyLineBreaks = false,
+            },
+          },
+        },
+      },
     }
 
     -- Ensure the servers and tools above are installed

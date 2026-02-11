@@ -14,10 +14,10 @@ return {
   -- setting the keybinding for LazyGit with 'keys' is recommended in
   -- order to load the plugin when the command is run for the first time
   keys = {
-    { '<leader>lg', '<cmd>LazyGit<cr>', desc = 'Open LazyGit' },
-    { '<leader>lf', '<cmd>LazyGitCurrentFile<cr>', desc = 'LazyGit Current File' },
-    { '<leader>ll', '<cmd>LazyGitFilter<cr>', desc = 'LazyGit Filter (log)' },
-    { '<leader>lc', '<cmd>LazyGitConfig<cr>', desc = 'LazyGit Config' },
+    { '<leader>gg', '<cmd>LazyGit<cr>', desc = 'Open LazyGit' },
+    { '<leader>gf', '<cmd>LazyGitCurrentFile<cr>', desc = 'LazyGit Current File' },
+    { '<leader>gl', '<cmd>LazyGitFilter<cr>', desc = 'LazyGit Filter (log)' },
+    { '<leader>gc', '<cmd>LazyGitConfig<cr>', desc = 'LazyGit Config' },
   },
   config = function()
     -- Lazygit floating window settings
