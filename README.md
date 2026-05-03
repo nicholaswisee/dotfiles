@@ -12,6 +12,11 @@ This repository contains configuration files for:
 - **[Ghostty](ghostty/)** - my daily-driving terminal, love it.
 - **[Neovim](nvim/)** - iUseNeovimBtw
 - **[Tmux](tmux/)** - personal settings/keybinds for tmux.
+- **[Btop](btop/)** - system resource monitor.
+- **[Fastfetch](fastfetch/)** - system info fetcher with custom ascii art.
+- **[Lazygit](lazygit/)** - terminal UI for git.
+- **[Yazi](yazi/)** - blazing fast terminal file manager.
+- **[Rofi](rofi/)** - application launcher with custom keybindings and Tokyo Night theme.
 
 ## Others
 
