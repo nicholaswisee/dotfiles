@@ -1,0 +1,14 @@
+[[plugin.deps]]
+use = "boydaihungst/mediainfo"
+rev = "20ecff6"
+hash = "ad48b4d2fd8f429ce87b0fddf7f34c9"
+
+[[plugin.deps]]
+use = "ndtoan96/ouch"
+rev = "406ce6c"
+hash = "f5afc904d5106ee368c8aa2ded43bd74"
+
+[[flavor.deps]]
+use = "BennyOe/tokyo-night"
+rev = "8e6296f"
+hash = "d9da921c3bd37ba32ee27a8a7a40461f"
