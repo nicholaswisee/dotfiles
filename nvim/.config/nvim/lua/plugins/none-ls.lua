@@ -18,8 +18,9 @@ return {
         'eslint_d', -- ts/js linter
         'shfmt',
         'goimports', -- go formatter (formats + organizes imports)
+        'clang-format', -- C/C++ formatter
         -- 'stylua', -- lua formatter; Already installed via Mason
-        -- 'ruff', -- Python linter and formatter; Already installed via Mason
+        'ruff', -- Python linter and formatter; was commented out so not actually installed
       },
       -- auto-install configured formatters & linters (with null-ls)
       automatic_installation = true,
@@ -28,6 +29,7 @@ return {
     local sources = {
       diagnostics.checkmake,
       formatting.prettier.with {
+        extra_args = { '--tab-width', '4' },
         filetypes = {
           'javascript',
           'javascriptreact',
@@ -40,10 +42,11 @@ return {
         },
       },
 
-      formatting.stylua,
+      formatting.stylua.with { extra_args = { '--indent-type', 'Spaces', '--indent-width', '4' } },
       formatting.shfmt.with { args = { '-i', '4' } },
       formatting.terraform_fmt,
       formatting.goimports, -- Go formatter (formats + organizes imports)
+      formatting.clang_format.with { extra_args = { '-style={IndentWidth: 4}' } }, -- C/C++ formatter
       require('none-ls.formatting.ruff').with { extra_args = { '--extend-select', 'I' } },
       require 'none-ls.formatting.ruff_format',
     }

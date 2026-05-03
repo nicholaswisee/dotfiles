@@ -1,11 +1,9 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR --export EDITOR:nvim
-SETUVAR --export GEMINI_API_KEY:AIzaSyCYlKPLhZhwNxA5zLP7LY4oidLC\x2dgScpWY
 SETUVAR --export --path GOPATH:/home/nicholaswisee/go
 SETUVAR --export JAVA_HOME:/usr/lib/jvm/default
-SETUVAR --export OPENROUTER_API_KEY:sk\x2dor\x2dv1\x2d58079960ae790f825e04f4717fffcfc4de1a5448e5a95beab2799a9e52dccdb0
-SETUVAR --export --path PATH:/home/nicholaswisee/\x2ebun/bin\x1e/run/user/1000/fnm_multishells/660481_1777793264720/bin\x1e/run/user/1000/fnm_multishells/660473_1777793264656/bin\x1e/home/nicholaswisee/\x2elocal/share/fnm\x1e/home/nicholaswisee/\x2eopencode/bin\x1e/home/nicholaswisee/go/bin\x1e/home/nicholaswisee/\x2ecabal/bin\x1e/home/nicholaswisee/\x2eghcup/bin\x1e/home/nicholaswisee/\x2ebun/bin\x1e/run/user/1000/fnm_multishells/660439_1777793264581/bin\x1e/run/user/1000/fnm_multishells/660406_1777793264496/bin\x1e/home/nicholaswisee/\x2elocal/share/fnm\x1e/home/nicholaswisee/\x2ebun/bin\x1e/run/user/1000/fnm_multishells/4361_1777732762214/bin\x1e/run/user/1000/fnm_multishells/4353_1777732762165/bin\x1e/home/nicholaswisee/\x2elocal/share/fnm\x1e/home/nicholaswisee/\x2elocal/share/pnpm\x1e/home/nicholaswisee/\x2ecabal/bin\x1e/home/nicholaswisee/\x2eghcup/bin\x1e/home/nicholaswisee/\x2ebun/bin\x1e/run/user/1000/fnm_multishells/1583_1777732267452/bin\x1e/home/nicholaswisee/\x2elocal/bin\x1e/run/user/1000/fnm_multishells/1578_1777732267395/bin\x1e/home/nicholaswisee/\x2elocal/share/fnm\x1e/usr/local/sbin\x1e/usr/local/bin\x1e/usr/bin\x1e/var/lib/flatpak/exports/bin\x1e/usr/lib/jvm/default/bin\x1e/usr/bin/site_perl\x1e/usr/bin/vendor_perl\x1e/usr/bin/core_perl\x1e/home/nicholaswisee/go/bin
+SETUVAR --export --path PATH:/home/nicholaswisee/\x2ebun/bin\x1e/run/user/1000/fnm_multishells/96588_1774368825130/bin\x1e/run/user/1000/fnm_multishells/96578_1774368825087/bin\x1e/home/nicholaswisee/\x2elocal/share/fnm\x1e/home/nicholaswisee/go/bin\x1e/home/nicholaswisee/\x2elocal/share/nvim/mason/bin\x1e/home/nicholaswisee/\x2elocal/share/nvim/mason/bin\x1e/home/nicholaswisee/\x2ecabal/bin\x1e/home/nicholaswisee/\x2eghcup/bin\x1e/home/nicholaswisee/\x2ebun/bin\x1e/run/user/1000/fnm_multishells/2724_1774364337344/bin\x1e/run/user/1000/fnm_multishells/2716_1774364337285/bin\x1e/home/nicholaswisee/\x2elocal/share/fnm\x1e/home/nicholaswisee/\x2ecabal/bin\x1e/home/nicholaswisee/\x2eghcup/bin\x1e/home/nicholaswisee/\x2ebun/bin\x1e/run/user/1000/fnm_multishells/2682_1774364337246/bin\x1e/run/user/1000/fnm_multishells/2674_1774364337201/bin\x1e/home/nicholaswisee/\x2elocal/share/fnm\x1e/home/nicholaswisee/\x2ebun/bin\x1e/run/user/1000/fnm_multishells/2385_1774364336913/bin\x1e/run/user/1000/fnm_multishells/2377_1774364336860/bin\x1e/home/nicholaswisee/\x2elocal/share/fnm\x1e/home/nicholaswisee/\x2elocal/share/pnpm\x1e/home/nicholaswisee/\x2ecabal/bin\x1e/home/nicholaswisee/\x2eghcup/bin\x1e/home/nicholaswisee/\x2ebun/bin\x1e/run/user/1000/fnm_multishells/1525_1774364333098/bin\x1e/home/nicholaswisee/\x2elocal/bin\x1e/run/user/1000/fnm_multishells/1520_1774364333029/bin\x1e/home/nicholaswisee/\x2elocal/share/fnm\x1e/usr/local/sbin\x1e/usr/local/bin\x1e/usr/bin\x1e/var/lib/flatpak/exports/bin\x1e/usr/lib/jvm/default/bin\x1e/usr/bin/site_perl\x1e/usr/bin/vendor_perl\x1e/usr/bin/core_perl\x1e/home/nicholaswisee/go/bin
 SETUVAR --export XDG_CACHE_HOME:/home/nicholaswisee/\x2ecache
 SETUVAR --export XDG_CONFIG_HOME:/home/nicholaswisee/\x2econfig
 SETUVAR --export XDG_DATA_HOME:/home/nicholaswisee/\x2elocal/share
@@ -16,7 +14,7 @@ SETUVAR __fish_initialized:4300
 SETUVAR _fisher_budimanjojo_2F_tmux_2E_fish_files:\x7e/\x2econfig/fish/conf\x2ed/tmux\x2eextra\x2econf\x1e\x7e/\x2econfig/fish/conf\x2ed/tmux\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/tmux\x2eonly\x2econf
 SETUVAR _fisher_plugins:budimanjojo/tmux\x2efish
 SETUVAR _fisher_upgraded_to_4_4:\x1d
-SETUVAR fish_user_paths:/home/nicholaswisee/\x2eopencode/bin\x1e/home/nicholaswisee/go/bin
+SETUVAR fish_user_paths:/home/nicholaswisee/go/bin
 SETUVAR pure_begin_prompt_with_current_directory:true
 SETUVAR pure_check_for_new_release:false
 SETUVAR pure_color_at_sign:pure_color_mute
@@ -86,7 +84,6 @@ SETUVAR pure_symbol_reverse_prompt:\u276e
 SETUVAR pure_symbol_ssh_prefix:
 SETUVAR pure_symbol_title_bar_separator:\x2d
 SETUVAR pure_symbol_virtualenv_prefix:
-SETUVAR pure_system_time_format:\x2b\x25T
 SETUVAR pure_threshold_command_duration:5
 SETUVAR pure_truncate_prompt_current_directory_keeps:\x2d1
 SETUVAR pure_truncate_window_title_current_directory_keeps:\x2d1

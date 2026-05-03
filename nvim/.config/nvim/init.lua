@@ -41,7 +41,7 @@ require('lazy').setup {
   require 'plugins.alpha',
   require 'plugins.indent-blankline',
   require 'plugins.incline',
-  require 'plugins.refactoring',
+  -- require 'plugins.refactoring',  -- Disabled: refactoring.nvim requires 'async' module not found (plugin bug - uses require "async" instead of require "plenary.async")
   require 'plugins.rest',
   require 'plugins.autopairs',
   require 'plugins.markdown',

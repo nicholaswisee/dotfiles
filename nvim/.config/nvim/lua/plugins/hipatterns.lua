@@ -10,12 +10,13 @@ return {
         hex_color = hipatterns.gen_highlighter.hex_color(),
 
         -- Highlight rgb()/rgba()
-        rgb_color = {
-          pattern = 'rgb%(%d+,%s*%d+,%s*%d+%)',
-          group = function(_, match)
-            return hipatterns.compute_hex_color_group(match, 'bg')
-          end,
-        },
+        -- Disabled due to conflicts with Java Color.rgb() patterns
+        -- rgb_color = {
+        --   pattern = 'rgb%(%d+,%s*%d+,%s*%d+%)',
+        --   group = function(_, match)
+        --     return hipatterns.compute_hex_color_group(match, 'bg')
+        --   end,
+        -- },
 
         -- TODO / FIXME / comments
         todo = {
@@ -27,6 +28,7 @@ return {
           group = 'MiniHipatternsFixme',
         },
       },
+      disabled_filetypes = { 'java' },
     }
   end,
 }

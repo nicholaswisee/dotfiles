@@ -7,21 +7,27 @@ return {
   config = function()
     local jdtls = require 'jdtls'
     local home = os.getenv 'HOME'
-    
+
     -- Find root directory (Maven or Gradle project)
     local root_markers = { '.git', 'mvnw', 'gradlew', 'pom.xml', 'build.gradle' }
     local root_dir = require('jdtls.setup').find_root(root_markers)
-    
+
     -- Workspace directory - separate workspace per project
     local workspace_dir = home .. '/.local/share/nvim/jdtls-workspace/' .. vim.fn.fnamemodify(root_dir, ':p:h:t')
-    
-    -- Path to jdtls installation (Mason installs it here)
-    local mason_registry = require 'mason-registry'
-    local jdtls_path = mason_registry.get_package('jdtls'):get_install_path()
-    
+
+    -- Path to jdtls installation (Mason installs packages in stdpath('data')/mason/packages)
+    local mason_path = vim.fn.stdpath 'data' .. '/mason/packages'
+    local jdtls_path = mason_path .. '/jdtls'
+
+    -- Check if jdtls is installed
+    if vim.fn.isdirectory(jdtls_path) == 0 then
+      vim.notify('jdtls is not installed. Please install it via Mason first: :MasonInstall jdtls', vim.log.levels.ERROR)
+      return
+    end
+
     -- Path to jar file
     local jar_path = vim.fn.glob(jdtls_path .. '/plugins/org.eclipse.equinox.launcher_*.jar')
-    
+
     -- Determine OS-specific config directory
     local system = 'linux'
     if vim.fn.has 'mac' == 1 then
@@ -30,24 +36,26 @@ return {
       system = 'win'
     end
     local config_dir = jdtls_path .. '/config_' .. system
-    
+
     -- Path to java-debug and vscode-java-test bundles (for debugging and testing)
     local bundles = {}
-    
-    -- Add java-debug adapter
-    local java_debug_path = mason_registry.get_package('java-debug-adapter'):get_install_path()
-    local java_debug_jar = vim.fn.glob(java_debug_path .. '/extension/server/com.microsoft.java.debug.plugin-*.jar', true)
-    if java_debug_jar ~= '' then
-      table.insert(bundles, java_debug_jar)
+
+    -- Add java-debug adapter (if installed)
+    local java_debug_path = mason_path .. '/java-debug-adapter'
+    if vim.fn.isdirectory(java_debug_path) ~= 0 then
+      local java_debug_jar = vim.fn.glob(java_debug_path .. '/extension/server/com.microsoft.java.debug.plugin-*.jar', true)
+      if java_debug_jar ~= '' then
+        table.insert(bundles, java_debug_jar)
+      end
     end
-    
+
     -- LSP capabilities from blink.cmp
     local capabilities = require('blink.cmp').get_lsp_capabilities()
-    
+
     -- Extended client capabilities for jdtls
     local extendedClientCapabilities = jdtls.extendedClientCapabilities
     extendedClientCapabilities.resolveAdditionalTextEditsSupport = true
-    
+
     local config = {
       cmd = {
         'java',
@@ -58,15 +66,20 @@ return {
         '-Dlog.level=ALL',
         '-Xmx1g',
         '--add-modules=ALL-SYSTEM',
-        '--add-opens', 'java.base/java.util=ALL-UNNAMED',
-        '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
-        '-jar', jar_path,
-        '-configuration', config_dir,
-        '-data', workspace_dir,
+        '--add-opens',
+        'java.base/java.util=ALL-UNNAMED',
+        '--add-opens',
+        'java.base/java.lang=ALL-UNNAMED',
+        '-jar',
+        jar_path,
+        '-configuration',
+        config_dir,
+        '-data',
+        workspace_dir,
       },
-      
+
       root_dir = root_dir,
-      
+
       settings = {
         java = {
           eclipse = {
@@ -101,6 +114,8 @@ return {
               url = 'https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml',
               profile = 'GoogleStyle',
             },
+            insertSpaces = true,
+            tabSize = 4,
           },
           signatureHelp = { enabled = true },
           contentProvider = { preferred = 'fernflower' },
@@ -132,68 +147,68 @@ return {
           },
         },
       },
-      
+
       flags = {
         allow_incremental_sync = true,
       },
-      
+
       init_options = {
         bundles = bundles,
         extendedClientCapabilities = extendedClientCapabilities,
       },
-      
+
       capabilities = capabilities,
-      
+
       -- Keybindings and commands
       on_attach = function(client, bufnr)
         -- Enable completion triggered by <c-x><c-o>
         vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-        
+
         local opts = { noremap = true, silent = true, buffer = bufnr }
-        
+
         -- Java-specific keybindings
         vim.keymap.set('n', '<leader>jo', function()
           require('jdtls').organize_imports()
         end, vim.tbl_extend('force', opts, { desc = 'Java: Organize imports' }))
-        
+
         vim.keymap.set('n', '<leader>jv', function()
           require('jdtls').extract_variable()
         end, vim.tbl_extend('force', opts, { desc = 'Java: Extract variable' }))
-        
+
         vim.keymap.set('v', '<leader>jv', function()
           require('jdtls').extract_variable(true)
         end, vim.tbl_extend('force', opts, { desc = 'Java: Extract variable' }))
-        
+
         vim.keymap.set('n', '<leader>jc', function()
           require('jdtls').extract_constant()
         end, vim.tbl_extend('force', opts, { desc = 'Java: Extract constant' }))
-        
+
         vim.keymap.set('v', '<leader>jc', function()
           require('jdtls').extract_constant(true)
         end, vim.tbl_extend('force', opts, { desc = 'Java: Extract constant' }))
-        
+
         vim.keymap.set('v', '<leader>jm', function()
           require('jdtls').extract_method(true)
         end, vim.tbl_extend('force', opts, { desc = 'Java: Extract method' }))
-        
+
         -- Update runtime
         vim.keymap.set('n', '<leader>ju', function()
           require('jdtls').update_project_config()
         end, vim.tbl_extend('force', opts, { desc = 'Java: Update project config' }))
-        
+
         -- JShell (Java REPL)
         vim.keymap.set('n', '<leader>js', function()
           require('jdtls').jshell()
         end, vim.tbl_extend('force', opts, { desc = 'Java: JShell' }))
-        
+
         -- Setup DAP (Debugging)
         require('jdtls').setup_dap { hotcodereplace = 'auto' }
       end,
     }
-    
+
     -- Start or attach to jdtls
     jdtls.start_or_attach(config)
-    
+
     -- Auto-organize imports on save (optional, comment out if unwanted)
     vim.api.nvim_create_autocmd('BufWritePre', {
       pattern = '*.java',

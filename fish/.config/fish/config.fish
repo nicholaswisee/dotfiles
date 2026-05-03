@@ -9,9 +9,12 @@ source /usr/share/cachyos-fish-config/cachyos-config.fish
 # Aliases
 alias g='git'
 alias n='nvim'
-
+alias yz='yazi'
 alias antigravity='antigravity 2>/dev/null'
 alias gt="ghosttime"
+
+abbr -a aidergemini "aider --model gemini/gemini-2.5-pro"
+abbr -a aiderqwen "aider --model openrouter/qwen/qwen3-coder:free"
 
 fnm env --use-on-cd | source
 
@@ -19,6 +22,8 @@ fzf --fish | source
 
 starship init fish | source
 zoxide init fish | source
+
+
 
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
@@ -47,3 +52,7 @@ end
 set -x WINE_DISABLE_WOW64 1
 
 # pnpm end
+
+# opencode
+fish_add_path /home/nicholaswisee/.opencode/bin
+

@@ -38,6 +38,9 @@ return {
         show_numbers = 1,
       }
 
+      -- Disable automatic quickfix window opening
+      vim.g.vimtex_quickfix_mode = 0
+
       -- Disable overfull/underfull warnings
       vim.g.vimtex_quickfix_ignore_filters = {
         'Overfull',

@@ -3,6 +3,7 @@ return {
   dependencies = {
     'nvim-lua/plenary.nvim',
     'nvim-treesitter/nvim-treesitter',
+    'nvim-nio/nvim-nio',
   },
   lazy = false,
   opts = {},

@@ -14,6 +14,7 @@ return {
 
     -- Allows extra capabilities provided by blink.cmp
     'saghen/blink.cmp',
+    'saghen/blink.lib',
   },
   config = function()
     -- Brief aside: **What is LSP?**
@@ -255,6 +256,9 @@ return {
           },
         },
       },
+
+      -- C/C++
+      clangd = {},
 
       -- Tailwind CSS
       tailwindcss = {
